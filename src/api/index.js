@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 export const fetchAPI = async (selectValue) => {
-    
     try {
-        let response = axios.get('./data.json');
-        return response;
-        
+
+        let { data: { ItemsCount, Financials } } = await axios.get('./data.json');
+        return { ItemsCount, Financials };
+
     } catch (error) {
         console.log(error);
     }
