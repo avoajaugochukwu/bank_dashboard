@@ -3,27 +3,30 @@ import React from 'react';
 import {fetchAPI} from './api';
 import './App.css';
 
-import { Cards } from './components';
+import { Cards, Charts } from './components';
 
 class App extends React.Component {
   state = {
-    data: {},
+    data: null,
   }
 
   async componentDidMount() {
     const data = await fetchAPI();
 
     this.setState({ data });
-    // console.log(typeof this.state.data);
-    // console.log(data);
   }
 
   render() {
     const { data } = this.state;
+
+    if (data === null) {
+      return null;
+    }
+
     return (
       <div className="App">
-        {/* {console.log(this.state.data)} */}
-        <Cards data={data} />
+        <Cards data={ data } />
+        <Charts data={ data }/>
       </div>
     );
 

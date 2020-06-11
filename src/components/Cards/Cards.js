@@ -48,8 +48,6 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
     if (!ItemsCount) {
         return 'loading..';
     }
-    // console.log(Financials);
-
 
     let TotalDeposit = Financials.map(item => item.TotalDeposit).reduce((a, b) => a + b, 0);
     let LiquidAsset = Financials.map(item => item.LiquidAsset).reduce((a, b) => a + b, 0);
@@ -57,7 +55,6 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
     let Budget = Financials.map(item => item.Budget).reduce((a, b) => a + b, 0);
     let TotalAssets = Financials.map(item => item.TotalAssets).reduce((a, b) => a + b, 0);
     let OverallRating = TotalDeposit / Budget;
-    console.log(OverallRating);
 
 
     // console.log(a);
@@ -139,7 +136,6 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                     </Box>
                 </Grid>
-
             </Grid>
         </Container>
     )
