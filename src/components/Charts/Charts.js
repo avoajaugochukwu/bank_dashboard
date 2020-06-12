@@ -1,11 +1,12 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
+
 
 import TopTenDepositChart from './TopTenDepositChart';
 import TypeOfDepositChart from './TypeOfDepositChart';
+import DepositTrendChart from './DepositTrendChart';
 
 const useStyles = makeStyles({
     root: {
@@ -29,17 +30,19 @@ const Charts = ({ data: { ItemsCount, Financials } }) => {
     return (
         <Container maxWidth="lg" component="main">
             <Grid container={true} spacing={1}>
-                <Grid item xs={12} sm={12} md={4} className={classes.chart}>
+                <Grid item xs={4}>
                     <TopTenDepositChart data={Financials} />
                 </Grid>
-                {/*  */}
-                <Grid item xs={12} sm={12} md={8}>
-                    <Grid item xs={12} sm={12} md={6} className={classes.chart}>
-                        <TypeOfDepositChart data={Financials} />
-                    </Grid>
+                <Grid item xs={4}>
+                    <TypeOfDepositChart data={Financials} />
                 </Grid>
+                <Grid item xs={4}>
+                    <DepositTrendChart data={Financials} />
+                </Grid>
+                
             </Grid>
-            
+
+
 
         </Container>
 

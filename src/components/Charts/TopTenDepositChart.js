@@ -62,7 +62,7 @@ class TopTenDepositChart extends React.Component {
 
     render() {
         return (
-            <div id="TopTenDepositChart" style={{ width: "100%", height: "500px" }}></div>
+            <div id="TopTenDepositChart" style={{ width: "100%", height: "250px", 'backgroundColor': '#ffffff' }}></div>
         )
     }
 }

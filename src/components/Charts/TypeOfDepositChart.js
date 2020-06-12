@@ -32,7 +32,6 @@ class TypeOfDepositChart extends React.Component {
         let chart = am4core.create("TypeOfDepositChart", am4charts.PieChart);
 
         chart.data = preparedData;
-        console.log(preparedData);
 
         let pieSeries = chart.series.push(new am4charts.PieSeries());
         pieSeries.dataFields.category = "DepositType";
@@ -56,7 +55,7 @@ class TypeOfDepositChart extends React.Component {
 
     render() {
         return (
-            <div id="TypeOfDepositChart" style={{ width: "100%", height: "250px" }}></div>
+            <div id="TypeOfDepositChart" style={{ width: "100%", height: "250px",'backgroundColor': '#ffffff' }}></div>
         )
     }
 }
