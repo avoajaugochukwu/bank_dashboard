@@ -5,6 +5,7 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 
 import TopTenDepositChart from './TopTenDepositChart';
+import TypeOfDepositChart from './TypeOfDepositChart';
 
 const useStyles = makeStyles({
     root: {
@@ -32,9 +33,9 @@ const Charts = ({ data: { ItemsCount, Financials } }) => {
                     <TopTenDepositChart data={Financials} />
                 </Grid>
                 {/*  */}
-                <Grid item xs={12} sm={12} md={4}>
+                <Grid item xs={12} sm={12} md={8}>
                     <Grid item xs={12} sm={12} md={6} className={classes.chart}>
-                        <h1>Home</h1>
+                        <TypeOfDepositChart data={Financials} />
                     </Grid>
                 </Grid>
             </Grid>

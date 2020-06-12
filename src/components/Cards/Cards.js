@@ -71,7 +71,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>
-                                &#8358; <CountUp start={0} end={TotalDeposit} duration={.75} separator="," />
+                                &#8358; <CountUp start={0} end={TotalDeposit} duration={3.75} separator="," />
                             </p>
                         </Box>
                     </Box>
@@ -83,7 +83,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>
-                                &#8358; <CountUp start={0} end={LiquidAsset} duration={.75} separator="," />
+                                &#8358; <CountUp start={0} end={LiquidAsset} duration={3.75} separator="," />
                             </p>
                         </Box>
                     </Box>
@@ -95,7 +95,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>
-                                &#8358; <CountUp start={0} end={GrossLoan} duration={.75} separator="," />
+                                &#8358; <CountUp start={0} end={GrossLoan} duration={3.75} separator="," />
                             </p>
                         </Box>
                     </Box>
@@ -107,7 +107,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>
-                                &#8358; <CountUp start={0} end={Budget} duration={.75} separator="," />
+                                &#8358; <CountUp start={0} end={Budget} duration={3.75} separator="," />
                             </p>
                         </Box>
                     </Box>
@@ -119,7 +119,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>
-                                &#8358; <CountUp start={0} end={TotalAssets} duration={.75} separator="," />
+                                &#8358; <CountUp start={0} end={TotalAssets} duration={3.75} separator="," />
                             </p>
                         </Box>
                     </Box>
