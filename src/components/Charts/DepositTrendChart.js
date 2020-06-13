@@ -2,6 +2,7 @@ import React from 'react';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import equal from 'fast-deep-equal';
 
 class DepositTrendChart extends React.Component {
     state = {
@@ -12,10 +13,18 @@ class DepositTrendChart extends React.Component {
         this.initChart();
     }
 
+    componentDidUpdate(prevProps) {
+        if (!equal(this.props.data, prevProps.data)) {
+            this.initChart();
+        }
+    }
+
     initChart() {
-        this.data = this.props.data;
+        console.log(this.state.data);
+        this.state.data = this.props.data;
+        console.log(this.state.data);
         // Prepare the data
-        let map = this.data.reduce(function (map, item) {
+        let map = this.state.data.reduce(function (map, item) {
             let Date = item.Date
             let TotalDeposit = +item.TotalDeposit
             map[Date] = (map[Date] || 0) + TotalDeposit
@@ -32,7 +41,6 @@ class DepositTrendChart extends React.Component {
         let chart = am4core.create("DepositTrendChart", am4charts.XYChart);
 
         chart.data = preparedData;
-        console.log(preparedData);
 
         let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
         dateAxis.renderer.grid.template.location = 0;

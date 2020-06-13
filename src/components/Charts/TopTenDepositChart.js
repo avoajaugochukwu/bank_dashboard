@@ -2,6 +2,7 @@ import React from 'react';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import equal from 'fast-deep-equal';
 
 class TopTenDepositChart extends React.Component {
     state = {
@@ -10,6 +11,12 @@ class TopTenDepositChart extends React.Component {
 
     componentDidMount() {
         this.initChart();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (!equal(this.props.data, prevProps.data)) {
+            this.initChart();
+        }
     }
 
     initChart() {

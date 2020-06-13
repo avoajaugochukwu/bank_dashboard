@@ -23,10 +23,53 @@ const useStyles = makeStyles({
     },
 })
 
+// class Charts extends React.Component {
+//     state = {
+//         data: {},
+//     }
+
+//     componentDidMount() {
+//         this.initChart();
+//     }
+
+//     initChart() {
+//         this.data = this.props.data;
+//         console.log(this.data)
+//     }
+
+//     componentWillUnmount() {
+//         if (this.props.data) {
+//             this.props.data = {}
+//         }
+//     }
+
+//     render() {
+//         const  { ItemsCount, Financials } = this.props.data;
+//         return (
+//             <Container maxWidth="lg" component="main">
+//                 <Grid container={true} spacing={1}>
+//                     <Grid item xs={4}>
+//                         <TopTenDepositChart data={Financials} />
+//                     </Grid>
+//                     <Grid item xs={4}>
+//                         <TypeOfDepositChart data={Financials} />
+//                     </Grid>
+//                     <Grid item xs={4}>
+//                         <DepositTrendChart data={Financials} />
+//                     </Grid>
+//                 </Grid>
+
+
+
+//             </Container>
+//         )
+//     }
+// }
 
 const Charts = ({ data: { ItemsCount, Financials } }) => {
     const classes = useStyles();
 
+    // console.log(Financials);
     return (
         <Container maxWidth="lg" component="main">
             <Grid container={true} spacing={1}>
@@ -39,13 +82,9 @@ const Charts = ({ data: { ItemsCount, Financials } }) => {
                 <Grid item xs={4}>
                     <DepositTrendChart data={Financials} />
                 </Grid>
-                
+
             </Grid>
-
-
-
         </Container>
-
     )
 }
 
