@@ -16,14 +16,21 @@ class App extends React.Component {
     this.setState({ data });    
   }
 
-  handleSelectedBranch = async (searchValue) => {
+  handleSelectedBranch = async (selectValue) => {
     this.data = {};
-    const data = await fetchAPI(searchValue);
+    const selectType = "Branch";
+    const data = await fetchAPI(selectValue, selectType);
 
     this.setState({ data });
-    // console.log('I was hit');
   }
 
+  handleSelectedDepositType = async (selectValue) => {
+    this.data = {};
+    const selectType = "DepositType";
+    const data = await fetchAPI(selectValue, selectType);
+
+    this.setState({ data });
+  }
 
   render() {
     const { data } = this.state;
@@ -34,7 +41,10 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Header handleSelectedBranch={this.handleSelectedBranch} data={ data } />
+        <Header 
+          handleSelectedBranch={this.handleSelectedBranch} 
+          handleSelectedDepositType={this.handleSelectedDepositType}
+          data={ data } />
         <Cards data={ data } />
         <Charts data={ data }/>
       </div>

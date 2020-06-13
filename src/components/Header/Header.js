@@ -1,28 +1,68 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NativeSelect, FormControl } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
 
-import { fetchCountries } from '../../api';
+import {getTodaysDate} from '../HelperFunctions';
 
-const StatePicker = ({ handleSelectedBranch, data: { Branches } }) => {
-    // const [Branch, setBranch] = useState([]);
-
-    // console.log(Branches);
-    // useEffect(() => {
-    //     const fetchAPI = async () => {
-    //         setCountries(await fetchCountries());
-    //     };
-
-    //     fetchAPI();
-    // }, []  );
+const useStyles = makeStyles({
+    root: {
+        borderRadius: '0px',
+        padding: '30px',
+        marginTop: '10px',
+    },
+});
 
 
+
+const StatePicker = ({ handleSelectedBranch, handleSelectedDepositType, data: { Branches, DepositType } }) => {
+    const classes = useStyles();
+    let today = getTodaysDate();
     return (
-        <FormControl>
-            <NativeSelect defaultValue="" onChange={(e) => handleSelectedBranch(e.target.value)}>
-                <option value="">All Branches</option>
-                {Branches.map((country, i) => <option key={i} value={country}>{country}</option>)}
-            </NativeSelect>
-        </FormControl>
+        <div>
+            <AppBar position="static">
+                <Container maxWidth="md" component="main">
+                    <Toolbar>
+                        <h1>Bank Dashboard</h1>
+                        <p>&nbsp;Last updated { today }</p>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+            <Container>
+                <Paper className={classes.root}>
+                    <Grid container spacing={3}>
+                        <Grid item>
+                            <FormControl>
+                                <NativeSelect defaultValue="" onChange={(e) => handleSelectedDepositType(e.target.value)}>
+                                    <option value="">&nbsp;&nbsp;All Deposit Type&nbsp;</option>
+                                    {DepositType.map((depositType, i) => <option key={i} value={depositType}>
+                                        &nbsp;&nbsp;{depositType}&nbsp;&nbsp;
+                                    </option>)}
+                                </NativeSelect>
+                            </FormControl>
+                        </Grid>
+                        <Grid item>
+                            <FormControl>
+                                <NativeSelect defaultValue="" onChange={(e) => handleSelectedBranch(e.target.value)}>
+                                    <option value="">&nbsp;&nbsp;All Branches&nbsp;&nbsp;</option>
+                                    {Branches.map((branch, i) => <option key={i} value={branch}>
+                                        &nbsp;&nbsp;{branch}&nbsp;&nbsp;
+                                    </option>)}
+                                </NativeSelect>
+                            </FormControl>
+                        </Grid>
+                    </Grid>
+                    
+                    
+                    
+                </Paper>
+            </Container>
+            
+        </div>
     )
 }
 

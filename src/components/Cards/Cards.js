@@ -14,12 +14,6 @@ const useStyles = makeStyles({
     media: {
         height: 140,
     },
-    wrapper: {
-        // backgroundColor: '#d6d2ff',
-        // paddingLeft: '30px',
-        // borderBottom: '1px #2a007d solid',
-        // marginBottom: '10px'
-    },
     boxWrapper: {
         backgroundColor: '#ffffff',
 
@@ -36,8 +30,6 @@ const useStyles = makeStyles({
         fontWeight: 'bold',
         fontSize: '150%',
         color: '#8e98ed',
-        // paddingBottom: '15px',
-        // paddingTop: '10px',
     }
 
 });
@@ -49,17 +41,13 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
         return 'loading..';
     }
 
+    //Get sum of values
     let TotalDeposit = Financials.map(item => item.TotalDeposit).reduce((a, b) => a + b, 0);
     let LiquidAsset = Financials.map(item => item.LiquidAsset).reduce((a, b) => a + b, 0);
     let GrossLoan = Financials.map(item => item.GrossLoan).reduce((a, b) => a + b, 0);
     let Budget = Financials.map(item => item.Budget).reduce((a, b) => a + b, 0);
     let TotalAssets = Financials.map(item => item.TotalAssets).reduce((a, b) => a + b, 0);
     let OverallRating = TotalDeposit / Budget;
-
-
-    // console.log(a);
-    // console.log(data);
-
 
     return (
         <Container maxWidth="lg" component="main">
@@ -71,7 +59,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>
-                                &#8358; <CountUp start={0} end={TotalDeposit} duration={3.75} separator="," />
+                                &#8358; <CountUp start={0} end={TotalDeposit} duration={3} separator="," />
                             </p>
                         </Box>
                     </Box>
@@ -83,7 +71,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>
-                                &#8358; <CountUp start={0} end={LiquidAsset} duration={3.75} separator="," />
+                                &#8358; <CountUp start={0} end={LiquidAsset} duration={3} separator="," />
                             </p>
                         </Box>
                     </Box>
@@ -95,7 +83,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>
-                                &#8358; <CountUp start={0} end={GrossLoan} duration={3.75} separator="," />
+                                &#8358; <CountUp start={0} end={GrossLoan} duration={3} separator="," />
                             </p>
                         </Box>
                     </Box>
@@ -107,7 +95,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>
-                                &#8358; <CountUp start={0} end={Budget} duration={3.75} separator="," />
+                                &#8358; <CountUp start={0} end={Budget} duration={3} separator="," />
                             </p>
                         </Box>
                     </Box>
@@ -119,7 +107,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>
-                                &#8358; <CountUp start={0} end={TotalAssets} duration={3.75} separator="," />
+                                &#8358; <CountUp start={0} end={TotalAssets} duration={3} separator="," />
                             </p>
                         </Box>
                     </Box>

@@ -20,11 +20,10 @@ class DepositTrendChart extends React.Component {
     }
 
     initChart() {
-        console.log(this.state.data);
-        this.state.data = this.props.data;
-        console.log(this.state.data);
+
         // Prepare the data
-        let map = this.state.data.reduce(function (map, item) {
+        // Use props containing data passed in from Charts.js
+        let map = this.props.data.reduce(function (map, item) {
             let Date = item.Date
             let TotalDeposit = +item.TotalDeposit
             map[Date] = (map[Date] || 0) + TotalDeposit
