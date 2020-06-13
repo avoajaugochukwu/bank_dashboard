@@ -65,7 +65,10 @@ class TypeOfDepositChart extends React.Component {
 
     render() {
         return (
-            <div id="TypeOfDepositChart" className={cx(styles.chartBoxShadow,styles.firstLineChart)}></div>
+            <div className={styles.chartBoxShadow}>
+                <p className={styles.chartHeader}>Type of Deposit Proportion</p>
+                <div id="TypeOfDepositChart" className={cx(styles.chartBoxShadow,styles.firstLineChart)}/>
+            </div>
         )
     }
 }

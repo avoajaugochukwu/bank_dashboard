@@ -9,7 +9,7 @@ import DepositTrendChart from './DepositTrendChart';
 const Charts = ({ data: { ItemsCount, Financials } }) => {
 
     return (
-        <Container maxWidth="lg" component="main">
+        <Container maxWidth="lg">
             <Grid container={true} spacing={1}>
                 <Grid item xs={12} sm={12} md={4}>
                     <TopTenDepositChart data={Financials} />

@@ -76,7 +76,11 @@ class TopTenDepositChart extends React.Component {
 
     render() {
         return (
-            <div id="TopTenDepositChart" className={cx(styles.chartBoxShadow,styles.firstLineChart)}></div>
+            <div className={styles.chartBoxShadow}>
+                <p className={styles.chartHeader}>Top Ten Branch by Deposit</p>
+                <div id="TopTenDepositChart" className={styles.firstLineChart} />
+            </div>
+            
         )
     }
 }

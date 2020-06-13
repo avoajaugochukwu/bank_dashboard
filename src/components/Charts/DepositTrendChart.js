@@ -46,6 +46,14 @@ class DepositTrendChart extends React.Component {
 
         let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
         dateAxis.renderer.grid.template.location = 0;
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.5;
+        dateAxis.baseInterval = {
+            "timeUnit": "day",
+            "count": 1
+          };
+        // dateAxis.skipEmptyPeriods = true;
+        // dateAxis.dateFormats.setKey("day", "MMMM");
 
         let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
@@ -70,7 +78,10 @@ class DepositTrendChart extends React.Component {
 
     render() {
         return (
-            <div id="DepositTrendChart" className={cx(styles.chartBoxShadow,styles.firstLineChart)}></div>
+            <div className={styles.chartBoxShadow}>
+                <p className={styles.chartHeader}>Deposit Trend</p>
+                <div id="DepositTrendChart" className={cx(styles.chartBoxShadow,styles.firstLineChart)} />
+            </div>
         )
     }
 }
