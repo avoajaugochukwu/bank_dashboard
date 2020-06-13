@@ -1,3 +1,7 @@
+# About this project
+This project visualises a banks' data at a high level. It uses AmCharts4 and React js
+
+# To Set up, follow steps below
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

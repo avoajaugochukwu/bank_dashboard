@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     },
     boxWrapper: {
         backgroundColor: '#ffffff',
-
+        boxShadow: '0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)',
     },
     boxHeader: {
         borderBottom: '1px solid #c8cdf6',
@@ -115,7 +115,7 @@ const Cards = ({ data: { ItemsCount, Financials } }) => {
                 <Grid item xs={12} sm={12} md={2}>
                     <Box className={classes.boxWrapper}>
                         <Box>
-                            <p className={classes.boxHeader}>Total Assets</p>
+                            <p className={classes.boxHeader}>Assets Ratio</p>
                         </Box>
                         <Box>
                             <p className={classes.boxBody}>

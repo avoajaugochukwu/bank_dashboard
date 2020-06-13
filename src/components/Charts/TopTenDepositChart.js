@@ -3,6 +3,9 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import equal from 'fast-deep-equal';
+import cx from 'classnames';
+
+import styles from './Charts.module.css';
 
 class TopTenDepositChart extends React.Component {
     state = {
@@ -43,11 +46,15 @@ class TopTenDepositChart extends React.Component {
 
         let valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
         valueAxis.title.text = "Total Deposit";
+        valueAxis.renderer.labels.template.fontSize = 10;
 
         let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "BranchName";
         categoryAxis.title.text = "Branch Name";
         categoryAxis.tooltip.disabled = true;
+        categoryAxis.renderer.minGridDistance = 10;
+        categoryAxis.renderer.labels.template.fontSize = 10;
+        
 
         let series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.valueX = "TotalDeposit";
@@ -69,7 +76,7 @@ class TopTenDepositChart extends React.Component {
 
     render() {
         return (
-            <div id="TopTenDepositChart" style={{ width: "100%", height: "250px", 'backgroundColor': '#ffffff' }}></div>
+            <div id="TopTenDepositChart" className={cx(styles.chartBoxShadow,styles.firstLineChart)}></div>
         )
     }
 }

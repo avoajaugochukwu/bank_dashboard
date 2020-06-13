@@ -3,6 +3,9 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import equal from 'fast-deep-equal';
+import cx from 'classnames';
+
+import styles from './Charts.module.css';
 
 class TypeOfDepositChart extends React.Component {
     state = {
@@ -62,7 +65,7 @@ class TypeOfDepositChart extends React.Component {
 
     render() {
         return (
-            <div id="TypeOfDepositChart" style={{ width: "100%", height: "250px",'backgroundColor': '#ffffff' }}></div>
+            <div id="TypeOfDepositChart" className={cx(styles.chartBoxShadow,styles.firstLineChart)}></div>
         )
     }
 }

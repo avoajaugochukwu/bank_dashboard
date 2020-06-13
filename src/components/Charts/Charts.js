@@ -11,13 +11,13 @@ const Charts = ({ data: { ItemsCount, Financials } }) => {
     return (
         <Container maxWidth="lg" component="main">
             <Grid container={true} spacing={1}>
-                <Grid item xs={4}>
+                <Grid item xs={12} sm={12} md={4}>
                     <TopTenDepositChart data={Financials} />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} sm={12} md={4}>
                     <TypeOfDepositChart data={Financials} />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} sm={12} md={4}>
                     <DepositTrendChart data={Financials} />
                 </Grid>
 
